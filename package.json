@@ -1,6 +1,6 @@
 {
   "name": "my-gas-project",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "release:major": "standard-version --release-as major",
     "ship:patch": "npm run release:patch && (git push --follow-tags || true) && npm run push && npm run version:gas",
     "ship:minor": "npm run release:minor && (git push --follow-tags || true) && npm run push && npm run version:gas",
-    "ship:major": "npm run release:major && (git push --follow-tags || true) && npm run push && npm run version:gas"
+    "ship:major": "npm run release:major && (git push --follow-tags || true) && npm run push && npm run version:gas",
+    "open": "open \"https://script.google.com/d/1vG4q9VGfYOkOI_-1fhmf-iRF5Hn50i2XnX7XYxBAblRoe4moVWP0AEGv/edit\""
   },
   "keywords": [],
   "author": "",
