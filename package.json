@@ -4,10 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "push": "npx @google/clasp push",
+    "versions": "npx @google/clasp versions",
+    "version:gas": "npx @google/clasp version v$npm_package_version",
+    "release": "standard-version",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "ship:patch": "npm run release:patch && (git push --follow-tags || true) && npm run push && npm run version:gas",
+    "ship:minor": "npm run release:minor && (git push --follow-tags || true) && npm run push && npm run version:gas",
+    "ship:major": "npm run release:major && (git push --follow-tags || true) && npm run push && npm run version:gas"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
